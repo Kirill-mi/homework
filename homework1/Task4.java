@@ -1,4 +1,4 @@
-package homeWork1;
+package homework1;
 
 public class Task4 {
     public static boolean sleepIn(boolean weekday, boolean vacation) {

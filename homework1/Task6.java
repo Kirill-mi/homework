@@ -1,4 +1,4 @@
-package homeWork1;
+package homework1;
 
 public class Task6 {
     public static String createPhoneNumber(int[] numbers) {
