@@ -121,6 +121,7 @@ public class Task1 {
 
         //float numberFortyTwoWithHalf=42.5f;
         //resultOne = ~numberFortyTwoWithHalf;
+
         String result1 = toBinaryString(resultOne);
         String result2 = toBinaryString(resultTwo);
         System.out.println(toBinaryString(numberFortyTwo));

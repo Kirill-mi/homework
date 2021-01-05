@@ -1,24 +1,21 @@
 package homework1;
 
+import java.util.Scanner;
+
 public class Task6 {
-    public static String createPhoneNumber(int[] numbers) {
-        String createPhoneNumber = "(";
-        for (int i = 0; i < 3; i++) {
-            createPhoneNumber = createPhoneNumber + numbers[i];
-        }
-        createPhoneNumber = createPhoneNumber + ") ";
-        for (int i = 3; i < 6; i++) {
-            createPhoneNumber = createPhoneNumber + numbers[i];
-        }
-        createPhoneNumber = createPhoneNumber + "-";
-        for (int i = 6; i < 10; i++) {
-            createPhoneNumber = createPhoneNumber + numbers[i];
-        }
-        return createPhoneNumber;
+    public static String createPhoneNumber(Integer[] numbers) {
+        String phoneNumber = String.format("(%d%d%d) %d%d%d-%d%d%d%d",(Object[]) numbers);
+        return phoneNumber;
     }
 
     public static void main(String[] args) {
-        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+        Integer[] numbers = new Integer[10];
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите цифру номера:");
+        for (int i = 0; i < 10; i++) {
+            numbers[i] = in.nextInt();
+            System.out.print("Введите цифру номера:");
+        }
         String formatNumber = createPhoneNumber(numbers);
         System.out.println(formatNumber);
     }
