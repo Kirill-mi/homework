@@ -1,6 +1,6 @@
 package homework1;
 
-public class Task4 {
+public class SleepInDefinetion {
     public static boolean sleepIn(boolean weekday, boolean vacation) {
         if (!weekday || vacation) {
             return true;

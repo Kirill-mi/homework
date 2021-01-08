@@ -2,7 +2,7 @@ package homework1;
 
 import java.util.Scanner;
 
-public class Task6 {
+public class FormatNumber {
     public static String createPhoneNumber(Integer[] numbers) {
         String phoneNumber = String.format("(%d%d%d) %d%d%d-%d%d%d%d",(Object[]) numbers);
         return phoneNumber;

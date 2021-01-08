@@ -3,7 +3,7 @@ package homework1;
 import java.util.Scanner;
 import java.util.Objects;
 
-public class Task52 {
+public class ChoiceNameVersion2 {
     public static void main(String[] args) {
         String nameOne = "Вася";
         String nameTwo = "Анастасия";

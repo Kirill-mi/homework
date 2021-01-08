@@ -1,25 +1,23 @@
 package homework1;
 
 import java.util.Scanner;
+import java.util.Objects;
 
-public class Task53 {
+public class ChoiceNameVersion1 {
     public static void main(String[] args) {
-
+        String nameOne = "Вася";
+        String nameTwo = "Анастасия";
         Scanner in = new Scanner(System.in);
         System.out.print("Введи имя: ");
         String name = in.nextLine();
-        switch (name) {
-            case "Вася": {
-                System.out.println("Привет!\nЯ тебя так долго ждал");
-                break;
-            }
-            case "Анастасия": {
+
+        if (Objects.equals(name, nameOne)) {
+            System.out.println("Привет!\nЯ тебя так долго ждал");
+        } else {
+            if (Objects.equals(name, nameTwo)) {
                 System.out.println("Я тебя так долго ждал");
-                break;
-            }
-            default: {
+            } else {
                 System.out.println("Добрый день. А вы кто?");
-                break;
             }
         }
     }
