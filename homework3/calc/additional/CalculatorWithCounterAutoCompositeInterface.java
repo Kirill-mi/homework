@@ -7,12 +7,12 @@ import homework3.calc.api.ICalculator;
  * 23.01.2021
  * Mikhalochkin Kirill
  */
-public class CalculatorWithCounterAutoInterface implements ICalculator {
+public class CalculatorWithCounterAutoCompositeInterface implements ICalculator {
     private final ICalculator calc;
     private long count = 0;
 
 
-    public CalculatorWithCounterAutoInterface(ICalculator calc) {
+    public CalculatorWithCounterAutoCompositeInterface(ICalculator calc) {
         this.calc = calc;
     }
 

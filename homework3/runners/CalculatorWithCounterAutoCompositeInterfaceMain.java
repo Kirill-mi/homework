@@ -1,6 +1,6 @@
 package homework3.runners;
 
-import homework3.calc.additional.CalculatorWithCounterAutoInterface;
+import homework3.calc.additional.CalculatorWithCounterAutoCompositeInterface;
 import homework3.calc.simple.CalculatorWithMathCopy;
 import homework3.calc.simple.CalculatorWithMathExtends;
 import homework3.calc.simple.CalculatorWithOperator;
@@ -10,12 +10,12 @@ import homework3.calc.simple.CalculatorWithOperator;
  * 22.01.2021
  * Mikhalochkin Kirill
  */
-public class CalculatorWithCounterAutoInterfaceMain {
+public class CalculatorWithCounterAutoCompositeInterfaceMain {
     public static void main(String[] args) {
         CalculatorWithOperator calc1 = new CalculatorWithOperator();
         CalculatorWithMathCopy calc2 = new CalculatorWithMathCopy();
         CalculatorWithMathExtends calc3 = new CalculatorWithMathExtends();
-        CalculatorWithCounterAutoInterface calc = new CalculatorWithCounterAutoInterface(calc3);
+        CalculatorWithCounterAutoCompositeInterface calc = new CalculatorWithCounterAutoCompositeInterface(calc3);
 
         double result;
         double temp;
