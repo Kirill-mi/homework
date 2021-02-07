@@ -14,7 +14,7 @@ public class DataContainer<T> implements Comparable<T>, Iterable<T> {
     private T[] data;
 
     public DataContainer(Class<T> clazz) {
-        data = (T[]) Array.newInstance(clazz, 7);
+        data = (T[]) Array.newInstance(clazz, 5);
     }
 
     public DataContainer(T[] data) {

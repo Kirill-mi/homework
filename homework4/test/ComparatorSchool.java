@@ -7,10 +7,10 @@ import java.util.Comparator;
  * 05.02.2021
  * Mikhalochkin Kirill
  */
-public class ComparatorStudent implements Comparator<Student>{
+public class ComparatorSchool implements Comparator<School>{
 
     @Override
-    public int compare(Student o1, Student o2) {
+    public int compare(School o1, School o2) {
         return o1.getNumber().compareTo(o2.getNumber());
     }
 }

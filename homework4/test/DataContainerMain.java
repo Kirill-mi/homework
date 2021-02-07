@@ -1,7 +1,7 @@
 package homework4.test;
 
-import homework4.DataContainer;
 
+import homework4.DataContainer;
 
 /**
  * Test file for homework4
@@ -14,13 +14,13 @@ public class DataContainerMain {
         String[] names = {null, null, "Маша", "Саша", "Паша", "Каша", null};
         DataContainer<Integer> dataNumbers = new DataContainer<>(numbers);
         DataContainer<String> dataNames = new DataContainer<>(names);
-        DataContainer<Student> students = new DataContainer<>(Student.class);
+        DataContainer<School> schools = new DataContainer<>(School.class);
         for (int i = 5; i > 0; i--) {
-            Student student = new Student();
-            student.setNumber(i + 1);
-            student.setName("name" + (i));
-            student.setAge((int) (Math.random() * 10 + 7));
-            students.add(student);
+            School school = new School();
+            school.setNumber(i + 1);
+            school.setName("name" + (i));
+            school.setAge((int) (Math.random() * 10 + 7));
+            schools.add(school);
         }
 
         System.out.println(dataNames.toString());
@@ -38,10 +38,11 @@ public class DataContainerMain {
         dataNumbers.sort(Integer::compareTo);
         System.out.println("После сортировки вложенным компаратором : " + dataNumbers);
 
-        System.out.println(students.toString());
+        System.out.println(schools.toString());
         System.out.println("Comparable age:");
-        students.sort(students);
+        schools.sort(schools);
+        System.out.println();
         System.out.println("Comparator number:");
-        students.sort(students, new ComparatorStudent());
+        schools.sort(schools, new ComparatorSchool());
     }
 }
