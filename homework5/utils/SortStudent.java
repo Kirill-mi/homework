@@ -10,7 +10,14 @@ import java.util.List;
  */
 public class SortStudent<T> {
 
-
+    /**
+     * Implements bubble sorting of array elements from smaller to larger
+     *
+     * @param array      array of not sorting elements
+     * @param comparator comparison function, which imposes a <i>total ordering</i> on some
+     *                   collection of objects
+     * @return List of sorted elements
+     */
     public static <T> List<T> bubbleSort(List<T> array, Comparator<T> comparator) {
         boolean isSorted = false;
         int lengthyArray = array.size();
@@ -30,6 +37,13 @@ public class SortStudent<T> {
         return array;
     }
 
+    /**
+     * Implements shake sorting of array elements from smaller to larger
+     *
+     * @param array      array of not sorting elements
+     * @param comparator comparison function, which imposes a <i>total ordering</i> on some
+     *                   collection of objects
+     */
     public static <T> void shakeSort(List<T> array, Comparator<T> comparator) {
         boolean isSorted = false;
         int countUp = array.size();

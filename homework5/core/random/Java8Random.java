@@ -28,10 +28,24 @@ public class Java8Random implements IRandom {
         }
     }
 
+    /**
+     * Returns a pseudo-random number int from the range(min,max)
+     *
+     * @param min the least value, unless greater than bound
+     * @param max the upper bound (exclusive)
+     * @return a pseudorandom value
+     */
     public int randInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
 
+    /**
+     * Returns a pseudo-random number double from the range(min,max) rounded to tenths
+     *
+     * @param min the least value, unless greater than bound
+     * @param max the upper bound (exclusive)
+     * @return a pseudorandom value
+     */
     @Override
     public double randDouble(double min, double max) {
         double result = ThreadLocalRandom.current().nextDouble(min, max);
@@ -39,6 +53,14 @@ public class Java8Random implements IRandom {
         return Math.round(result * scale) / scale;
     }
 
+    /**
+     * Returns a pseudo-random String Name with length of the interval(min,max)
+     * from file Names
+     *
+     * @param min minimum string length
+     * @param max maximum string length
+     * @return a pseudorandom value
+     */
     @Override
     public String randString(int min, int max) {
         boolean flag = true;
@@ -52,7 +74,11 @@ public class Java8Random implements IRandom {
         return name;
     }
 
-
+    /**
+     * Returns a pseudo-random
+     *
+     * @return a pseudorandom value boolean
+     */
     @Override
     public boolean randBoolean() {
         return ThreadLocalRandom.current().nextBoolean();

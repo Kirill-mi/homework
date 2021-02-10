@@ -22,6 +22,11 @@ public class RandomStudentSupplier implements Supplier<Student> {
         this.counter = counter;
     }
 
+    /**
+     * Gets a result.
+     *
+     * @return a result
+     */
     @Override
     public Student get() {
         return new Student(

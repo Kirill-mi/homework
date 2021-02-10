@@ -18,6 +18,13 @@ public class StudentAgeAndScorePredicate implements Predicate<Student> {
         this.score = score;
     }
 
+    /**
+     * Evaluates this predicate on the given argument.
+     *
+     * @param student the input argument
+     * @return {@code true} if the input argument matches the predicate,
+     * otherwise {@code false}
+     */
     @Override
     public boolean test(Student student) {
         return student.getAge() >= age && student.getScore() > score;
