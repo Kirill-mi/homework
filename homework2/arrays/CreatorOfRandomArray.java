@@ -1,6 +1,6 @@
 package homework2.arrays;
 
-//import homework1.UserInput;
+//import util.UserInput;
 
 import java.util.Arrays;
 

@@ -1,26 +1,26 @@
 package homework1;
 
-import java.util.Scanner;
+import homework1.api.ICommunicationPrinter;
 
-public class ChoiceNameVersion3 {
-    public static void main(String[] args) {
+public class ChoiceNameVersion3 implements ICommunicationPrinter {
 
-        Scanner in = new Scanner(System.in);
-        System.out.print("Введи имя: ");
-        String name = in.nextLine();
+    @Override
+    public String welcome(String name) {
+        String result;
         switch (name) {
             case "Вася": {
-                System.out.println("Привет!\nЯ тебя так долго ждал");
+                result = "Привет!\nЯ тебя так долго ждал";
                 break;
             }
             case "Анастасия": {
-                System.out.println("Я тебя так долго ждал");
+                result = "Я тебя так долго ждал";
                 break;
             }
             default: {
-                System.out.println("Добрый день. А вы кто?");
+                result = "Добрый день. А вы кто?";
                 break;
             }
         }
+        return result;
     }
 }

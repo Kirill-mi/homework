@@ -8,7 +8,7 @@ import homework6.api.ISearchEngine;
  * Mikhalochkin Kirill
  */
 public class SearchEnginePunctuationNormalizer implements ISearchEngine {
-    public final ISearchEngine finder;
+    private final ISearchEngine finder;
 
     public SearchEnginePunctuationNormalizer(ISearchEngine finder) {
         this.finder = finder;

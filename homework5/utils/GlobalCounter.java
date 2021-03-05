@@ -8,8 +8,6 @@ package homework5.utils;
 public class GlobalCounter {
     private int counter;
 
-
-
     public int get() {
         return this.counter;
     }

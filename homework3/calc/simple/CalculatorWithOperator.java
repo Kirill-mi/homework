@@ -39,7 +39,7 @@ public class CalculatorWithOperator implements ICalculator {
         while ((result - number / result) > (result * accuracy)) {
             result = (number / result + result) / 2;
         }
-        return result;
+        return Math.round(result);
     }
 
     public double findAbsOfNumber(double number) {

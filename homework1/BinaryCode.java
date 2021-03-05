@@ -11,15 +11,15 @@ public class BinaryCode {
         System.out.println("Двоичный код:" + result);
     }
 
-    static String toBinaryString(byte numberDec) {
+    public static String toBinaryString(byte numberDec) {
         String numberBin;
         if (numberDec >= 0) {
             numberBin = String.format("%8s", Integer.toBinaryString(numberDec)).
                     replaceAll(" ", "0");
-            return numberBin;
         } else {
             numberBin = Integer.toBinaryString(numberDec).substring(24);
-            return numberBin;
         }
+        System.out.println(numberBin);
+        return numberBin;
     }
 }

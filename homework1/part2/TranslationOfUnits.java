@@ -1,6 +1,6 @@
 package homework1.part2;
 
-import homework1.UserInput;
+import util.UserInput;
 
 import java.util.Objects;
 

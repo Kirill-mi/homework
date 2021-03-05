@@ -19,18 +19,19 @@ public class SearchResultInThread extends SearchResultInFile {
         ISearchEngine regSearch = new SearchEngineCaseNorm(new SearchEnginePunctuationNormalizer(new RegExSearch()));
         StringBuilder bookAddress = new StringBuilder();
         StringBuilder book = new StringBuilder();
-
+        FileWriter writer=null;
         try {
-            FileWriter writer = new FileWriter(new File("result.txt"));
+             writer = new FileWriter(new File("result.txt"));
             do {
                 bookAddress.append(getBookAddress(addressOfDirectory));
                 if (bookAddress.toString().equals("end")) {
                     return;
                 } else {
+                    FileWriter finalWriter = writer;
                     Thread th = new Thread(() -> {
                         book.append(readBookToString(bookAddress.toString()));
                         String resultOfSearch = (getResultOfSearch(book.toString(), bookAddress.toString(), regSearch));
-                        saveResult(resultOfSearch, writer);
+                        saveResult(resultOfSearch, finalWriter);
                         book.setLength(0);
                         bookAddress.setLength(0);
                     });
@@ -44,6 +45,13 @@ public class SearchResultInThread extends SearchResultInFile {
             } while (!bookAddress.toString().equals("end"));
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {if (writer!=null) {
+            try {
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         }
     }
 }

@@ -19,9 +19,7 @@ public class EasySearch implements ISearchEngine {
             temp = text.indexOf(word, startIndex);
             if (temp != -1) {
                 startIndex = text.indexOf(word, startIndex) + word.length();
-                if (text.charAt(temp - 1) == ' ' && text.charAt(temp + word.length()) == ' ') {
-                    count++;
-                }
+                count++;
             }
         }
         return count;

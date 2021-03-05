@@ -41,7 +41,7 @@ public class ArraySorter {
         return array;
     }
 
-    private static void changeElements(int[] array, int i) {
+    public static void changeElements(int[] array, int i) {
         int temp;
         temp = array[i - 1];
         array[i - 1] = array[i];

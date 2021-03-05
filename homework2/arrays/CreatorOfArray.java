@@ -1,6 +1,6 @@
 package homework2.arrays;
 
-import homework1.UserInput;
+import util.UserInput;
 
 public class CreatorOfArray {
     public static int[] arrayFromConsole() {

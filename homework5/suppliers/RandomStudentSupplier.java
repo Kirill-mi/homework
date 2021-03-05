@@ -30,11 +30,11 @@ public class RandomStudentSupplier implements Supplier<Student> {
     @Override
     public Student get() {
         return new Student(
-                counter.getAndInc(),
-                random.randString(3, 10),
-                random.randInt(7, 17),
-                random.randDouble(0, 10),
-                random.randBoolean()
+                this.counter.getAndInc(),
+                this.random.randString(3, 10),
+                this.random.randInt(7, 17),
+                this.random.randDouble(0, 10),
+                this.random.randBoolean()
         );
     }
 }

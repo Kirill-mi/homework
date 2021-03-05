@@ -9,7 +9,7 @@ import java.util.*;
  * 01.02.2021
  * Mikhalochkin Kirill
  */
-public class DataContainer<T> implements Comparable<T>, Iterable<T> {
+public class DataContainer<T> implements Iterable<T> {
 
     private T[] data;
 
@@ -216,10 +216,6 @@ public class DataContainer<T> implements Comparable<T>, Iterable<T> {
         return Arrays.copyOf(data, temp);
     }
 
-    @Override
-    public int compareTo(T data) {
-        return 0;
-    }
 
     /**
      * Returns an iterator over the elements in this list in proper sequence.

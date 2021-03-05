@@ -1,15 +1,19 @@
 package homework2.loops;
 
-import homework1.UserInput;
+import util.UserInput;
 
 public class Overflow {
-    public static void main(String[] args) {
+    int multiplier = UserInput.getUserInputInt("Введите целочисленный множитель:");
+
+    public long findNumberBeforeOverflow(int multiplier) {
         long a = 1;
-        int multiplier = UserInput.getUserInputInt("Введите целочисленный множитель:");
         while (Math.abs(a) <= Long.MAX_VALUE / Math.abs(multiplier)) {
             a *= multiplier;
         }
-        System.out.println("Число до преполнения=" + a);
-        System.out.println("Число после преполнения=" + (a * multiplier));
+        return a;
+    }
+
+    public long findNumberAfterOverflow(int multiplier) {
+        return (findNumberBeforeOverflow(multiplier) * multiplier);
     }
 }

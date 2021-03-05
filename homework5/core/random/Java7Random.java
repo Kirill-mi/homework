@@ -21,7 +21,7 @@ public class Java7Random implements IRandom {
      */
     @Override
     public int randInt(int min, int max) {
-        return (rand.nextInt(max - min) + min);
+        return (rand.nextInt((max - min)+1) + min);
     }
 
     /**

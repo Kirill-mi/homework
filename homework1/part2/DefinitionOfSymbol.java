@@ -1,6 +1,6 @@
 package homework1.part2;
 
-import homework1.UserInput;
+import util.UserInput;
 
 public class DefinitionOfSymbol {
     public static void main(String[] args) {

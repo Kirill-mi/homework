@@ -1,31 +1,19 @@
 package homework2.arrays;
 
-import java.util.Arrays;
 
 public class OperationsWithArray {
-    private static final int[] container = CreatorOfRandomArray.randomArray(5, 15);
 
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(container));
-        System.out.println("Sum of the even positive elements:" + sumEvenPositiveElements(container));
-        System.out.println("Max element with even index:" + findMaxElementWithEvenIndex(container));
-        System.out.println("Elements less arithmetic mean:" + Arrays.toString(findElementsLessAverage(container)));
-        System.out.println("Two min elements:" + Arrays.toString(findTwoMinElements(container)));
-        System.out.println("Reduction array:" + Arrays.toString(reduceArray(container, 3, 5)));
-        System.out.println("Summa of numbers of elements:" + sumOfNumbersOfElements(container));
-    }
-
-    public static int sumEvenPositiveElements(int[] array) {
+    public int sumEvenPositiveElements(int[] array) {
         int summaOfElements = 0;
-        for (int element : array) {
-            if (element % 2 == 0 && element > 0) {
-                summaOfElements += element;
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 == 0 && array[i] > 0) {
+                summaOfElements += array[i];
             }
         }
         return summaOfElements;
     }
 
-    public static int findMaxElementWithEvenIndex(int[] array) {
+    public int findMaxElementWithEvenIndex(int[] array) {
         int maxElement = array[0];
         for (int i = 0; i < array.length; ) {
             if (array[i] > maxElement) {
@@ -36,7 +24,7 @@ public class OperationsWithArray {
         return maxElement;
     }
 
-    public static int[] findElementsLessAverage(int[] array) {
+    public int[] findElementsLessAverage(int[] array) {
         float summaOfElements = 0.0f;
         for (int element : array) {
             summaOfElements += element;
@@ -59,7 +47,7 @@ public class OperationsWithArray {
         return maxElements;
     }
 
-    static public int[] findTwoMinElements(int[] array) {
+    public int[] findTwoMinElements(int[] array) {
         int minOne = array[0];
         int minTwo = array[1];
         if (minOne > minTwo) {
@@ -83,14 +71,20 @@ public class OperationsWithArray {
         return minArray;
     }
 
-    public static int[] reduceArray(int[] array, int min, int max) {
-        int[] reducedArray = new int[array.length];
+    public int[] reduceArray(int[] array, int min, int max) {
+        int count = 0;
         if (min > max) {
             int temp = max;
             max = min;
             min = temp;
         }
-        int count = 0;
+        for (int element : array) {
+            if (min > element || element > max) {
+                count++;
+            }
+        }
+        int[] reducedArray = new int[count];
+        count = 0;
         for (int element : array) {
             if (min > element || element > max) {
                 reducedArray[count] = element;
@@ -98,10 +92,9 @@ public class OperationsWithArray {
             }
         }
         return reducedArray;
-
     }
 
-    public static int sumOfNumbersOfElements(int[] array) {
+    public int sumOfNumbersOfElements(int[] array) {
         int summa = 0;
         for (int element : array) {
             int temp = element;

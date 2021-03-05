@@ -1,12 +1,8 @@
 package homework1;
 
-public class SleepInDefinetion {
+public class SleepInDefinition {
     public static boolean sleepIn(boolean weekday, boolean vacation) {
-        if (!weekday || vacation) {
-            return true;
-        } else {
-            return false;
-        }
+        return !weekday || vacation;
     }
 
     public static void main(String[] args) {

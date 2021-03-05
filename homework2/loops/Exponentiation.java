@@ -1,19 +1,18 @@
 package homework2.loops;
 
-import homework1.UserInput;
-
 public class Exponentiation {
-    public static void main(String[] args) {
-        double number = UserInput.getUserInputDouble("Введите число:");
-        int powerOfNumber = UserInput.getUserInputInt("Введите целую положительную степень числа:");
+
+
+    public double findExp(double number, int powerOfNumber) {
         double result = 1.0;
-        if (powerOfNumber > 0) {
-            System.out.println("Степень должна быть положительной");
+        if (powerOfNumber < 0) {
+            throw new IllegalArgumentException("Степень должна быть положительной");
+        } else {
+            for (int i = 1; i <= powerOfNumber; i++) {
+                result = result * number;
+            }
+            System.out.println(number + "^" + powerOfNumber + "=" + result);
         }
-        for (int i = 1; i <= powerOfNumber; i++) {
-            result = result * number;
-        }
-        System.out.println(number + "^" + powerOfNumber + "=" + result);
-        // System.out.printf("%.2f^%d=%.6f", number, powerOfNumber, result);
+        return result;
     }
 }

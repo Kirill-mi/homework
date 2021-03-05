@@ -1,5 +1,7 @@
 package homework5.dto;
 
+import java.util.Objects;
+
 /**
  * homework5
  * 03.02.2021
@@ -35,6 +37,19 @@ public class Student implements Comparable<Student> {
 
     public double getScore() {
         return score;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return id == student.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override

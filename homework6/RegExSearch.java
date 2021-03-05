@@ -11,11 +11,17 @@ import java.util.regex.Pattern;
  * Mikhalochkin Kirill
  */
 public class RegExSearch implements ISearchEngine {
+    private int flag=0;
+
+    public void setFlag(int flag) {
+        this.flag = flag;
+    }
 
     @Override
     public long search(String text, String word) {
 
-        Pattern pattern = Pattern.compile("\\b" + word + "\\b");
+
+        Pattern pattern = Pattern.compile("\\b" + word + "\\b",flag);
         Matcher matcher = pattern.matcher(text);
         int count = 0;
         while (matcher.find()) {
