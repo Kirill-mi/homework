@@ -5,7 +5,6 @@ import homework6.api.ISearchEngine;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -19,9 +18,9 @@ public class SearchResultInThread extends SearchResultInFile {
         ISearchEngine regSearch = new SearchEngineCaseNorm(new SearchEnginePunctuationNormalizer(new RegExSearch()));
         StringBuilder bookAddress = new StringBuilder();
         StringBuilder book = new StringBuilder();
-        FileWriter writer=null;
+        FileWriter writer = null;
         try {
-             writer = new FileWriter(new File("result.txt"));
+            writer = new FileWriter(new File("result.txt"));
             do {
                 bookAddress.append(getBookAddress(addressOfDirectory));
                 if (bookAddress.toString().equals("end")) {
@@ -36,22 +35,19 @@ public class SearchResultInThread extends SearchResultInFile {
                         bookAddress.setLength(0);
                     });
                     th.start();
-                    try {
-                        TimeUnit.MILLISECONDS.sleep(10000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    th.join();
                 }
             } while (!bookAddress.toString().equals("end"));
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-        }finally {if (writer!=null) {
-            try {
-                writer.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+        } finally {
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-        }
         }
     }
 }
